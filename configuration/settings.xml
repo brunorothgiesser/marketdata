@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <mirrors>
+        <mirror>
+            <id>mirror-maven-central</id>
+            <mirrorOf>central</mirrorOf>
+            <name>repo1-cache</name>
+            <url>http://dml.bpweb.bp.com:8088/artifactory/repo1-cache</url>
+        </mirror>
+
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>bp.repo</id>
+            <repositories>
+                <repository>
+                    <id>bp.artefacts</id>
+                    <name>BP Artifactory</name>
+                    <url>http://dml.bpweb.bp.com:8088/artifactory/bp-symphony/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>bp.plugins</id>
+                    <name>BP Artifactory</name>
+                    <url>http://dml.bpweb.bp.com:8088/artifactory/bp-symphony/</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>bp.repo</activeProfile>
+    </activeProfiles>
+
+</settings>
